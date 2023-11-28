@@ -29,7 +29,7 @@ export const OffersForm = () => {
     if(user){
       formik.setFieldValue('userId', user?.id || '')
     }
-  }, [user, formik]);
+  }, [user]);
 
   if(loading) return <CircularProgress />
 
