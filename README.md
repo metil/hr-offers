@@ -7,8 +7,10 @@ HR Offers is a web application designed to help HR managers to create offers for
 ## Table of Contents
 
 - [Installation](#installation)
+- [Access](#access)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
+- [Content](#content)
 
 ## Installation
 
@@ -39,6 +41,14 @@ To run this project locally you need NodeJS and docker-compose, follow these ste
    http://localhost:3000
    ```
 8. **Login with the credentials provided to you**
+
+## Access
+ 
+### Database
+ - url: 
+```postgres://postgres:${POSTGRES_PASSWORD}@localhost:7432/postgres```
+### GraphQL
+ - playground: http://localhost:3000/api/graphql
 
 ## Usage
 
@@ -74,4 +84,43 @@ To run this project locally you need NodeJS and docker-compose, follow these ste
 - Google Firebase
 - Docker
 
-   
+## Used techniques
+### Backend
+- Circuit Breaker
+- Data Access Object
+- GraphQL Directives
+### Frontend
+ - React Context API
+ - Custom Hooks
+ - NextJS API Routes
+
+## Content
+### Folder structure
+
+`├──/__generated__` # Generated graphql types  
+`├──/backend` # React components  
+`| ├──/db` # Data access objects  
+`| ├──/graphql` # GraphQL Schema & Resolvers  
+`| └──/middlewares` # Middlewares used in the GraphQL  
+`├──/gql` # String Literal GraphQL queries and mutations  
+`├──/pages` # NextJS Pages  
+`| ├──/api` # GraphQL API route  
+`| ├──/candidates` # Candidates Create/List/ Candidate Offer pages  
+`| ├──/jobs` # Jobs Create/List Pages  
+`| └──/offers` # Offers Create/List Pages  
+`├──/public` # Static Content  
+`├──/ui` # UI Components  
+`| ├──/compoents` # UI Components  
+`| ├──/contexts` # React Contexts  
+`| ├──/hooks` # Custom Hooks  
+`| ├──/layouts` # Layouts  
+`| └──/theme` # Material UI Theme  
+`├──/validations` # Form validations used in FE and BE  
+`├── docker-compose.yaml` # Docker compose file  
+`├── next.config.js` # NextJS configuration file  
+`├── package.json` # NPM package file  
+`├── README.md` # Readme file  
+`└── tsconfig.json` # TypeScript configuration file
+    
+
+
