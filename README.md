@@ -76,7 +76,7 @@ To run this project locally you need NodeJS and docker-compose, follow these ste
 ## Technologies Used
 
 - [React](https://reactjs.org/)
-- [NextJS](https://nextjs.org/)
+- [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Material UI](https://mui.com/)
 - PostgreSQL
@@ -89,10 +89,15 @@ To run this project locally you need NodeJS and docker-compose, follow these ste
 - Circuit Breaker
 - Data Access Object
 - GraphQL Directives
+- Shared Validations
 ### Frontend
  - React Context API
  - Custom Hooks
- - NextJS API Routes
+ - Next.js API Routes
+ - Shared Validations
+### Database
+- Triggers
+- DB Views 
 
 ## Content
 ### Folder structure
