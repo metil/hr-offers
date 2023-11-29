@@ -1,15 +1,15 @@
-import { Offer, OfferInput, OfferRaw } from "@/__generated__/graphql";
-import { GraphQL } from "@/backend/graphql/declarations";
-import { offerValidation } from "@/validations/offer";
+import { Offer, OfferInput, OfferRaw } from '@/__generated__/graphql'
+import { GraphQL } from '@/backend/graphql/declarations'
+import { offerValidation } from '@/validations/offer'
 
 export const offers = {
   Query: {
     offerWithPin: async (_: any, { pin, id }: {pin: number, id: string}, { db }: GraphQL.Context) => {
       return db.offer.offer(id).then((offer: Offer) => {
-        if(offer.offerPin !== pin) throw new Error("Invalid pin");
-        return offer;
-      }).then((offer: Offer) => db.offer.updateOfferStatus(offer.offerId, "VIEWED")
-        .then(() => offer));
+        if(offer.offerPin !== pin) throw new Error('Invalid pin')
+        return offer
+      }).then((offer: Offer) => db.offer.updateOfferStatus(offer.offerId, 'VIEWED')
+        .then(() => offer))
     }
   },
   Mutation: {

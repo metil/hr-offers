@@ -1,17 +1,17 @@
-import { useFormik } from "formik";
-import { JobInput, useCreateJobMutation } from "@/__generated__/graphql";
-import { Container } from "@mui/system";
-import { Box, Button, TextField, Typography } from "@mui/material";
-import { jobValidation as validationSchema } from "@/validations/jobs";
-import Main from "@/ui/layouts/Main";
-import { FormikConfig } from "formik/dist/types";
-import { enqueueSnackbar } from "notistack";
-import { useRouter } from "next/router";
+import { useFormik } from 'formik'
+import { JobInput, useCreateJobMutation } from '@/__generated__/graphql'
+import { Container } from '@mui/system'
+import { Box, Button, TextField, Typography } from '@mui/material'
+import { jobValidation as validationSchema } from '@/validations/jobs'
+import Main from '@/ui/layouts/Main'
+import { FormikConfig } from 'formik/dist/types'
+import { enqueueSnackbar } from 'notistack'
+import { useRouter } from 'next/router'
 
 
 const CreateJobPage = () => {
   const [createJob] = useCreateJobMutation()
-  const router = useRouter();
+  const router = useRouter()
   const submit: FormikConfig<JobInput>['onSubmit'] = async (values: JobInput, { setSubmitting }) => {
     setSubmitting(true)
     await createJob({
@@ -111,8 +111,8 @@ const CreateJobPage = () => {
           </Box>
         </Box>
       </Container>
-    </Main>);
-};
+    </Main>)
+}
 
 
-export default CreateJobPage;
+export default CreateJobPage

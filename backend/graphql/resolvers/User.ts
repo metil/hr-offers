@@ -1,10 +1,10 @@
-import { UserInput } from "@/__generated__/graphql";
-import { GraphQL } from "@/backend/graphql/declarations";
+import { UserInput } from '@/__generated__/graphql'
+import { GraphQL } from '@/backend/graphql/declarations'
 
 export const user = {
   User:{
     offers: async ({ id }: any, _: any, { db }: GraphQL.Context) => {
-      return await db.offer.offersByUserId(id);
+      return await db.offer.offersByUserId(id)
     }
   },
   Query: {
@@ -17,7 +17,7 @@ export const user = {
   },
   Mutation: {
     createUser: async (_: any ,{ user } : {user: UserInput}, { db }: GraphQL.Context) => {
-      return await db.user.createUser(user);
+      return await db.user.createUser(user)
     }
   }
 }

@@ -1,16 +1,16 @@
-import { OfferInput } from "@/__generated__/graphql";
-import { useEffect } from "react";
-import { useFormik } from "formik";
-import { offerValidation as validationSchema } from "@/validations/offer";
-import { Box, Button, CircularProgress, MenuItem, TextField, Typography } from "@mui/material";
-import { Container } from "@mui/system";
-import { useAuth } from "@/ui/contexts/AuthContext";
-import { useCreateOffer } from "@/ui/hooks/useCreateOffer";
+import { OfferInput } from '@/__generated__/graphql'
+import { useEffect } from 'react'
+import { useFormik } from 'formik'
+import { offerValidation as validationSchema } from '@/validations/offer'
+import { Box, Button, CircularProgress, MenuItem, TextField, Typography } from '@mui/material'
+import { Container } from '@mui/system'
+import { useAuth } from '@/ui/contexts/AuthContext'
+import { useCreateOffer } from '@/ui/hooks/useCreateOffer'
 
 export const OffersForm = () => {
   const { user }  = useAuth()
 
-  const { candidates, positions, loading, submit } = useCreateOffer(user);
+  const { candidates, positions, loading, submit } = useCreateOffer(user)
 
 
   const formik = useFormik<OfferInput>({
@@ -29,7 +29,7 @@ export const OffersForm = () => {
     if(user){
       formik.setFieldValue('userId', user?.id || '')
     }
-  }, [user]);
+  }, [user])
 
   if(loading) return <CircularProgress />
 
@@ -111,5 +111,5 @@ export const OffersForm = () => {
         </Box>
       </Box>
     </Container>
-  );
+  )
 }

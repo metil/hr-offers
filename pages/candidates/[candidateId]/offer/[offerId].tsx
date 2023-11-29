@@ -1,5 +1,5 @@
-import { CandidateOffer } from "@/ui/components/candidates/CandidateOffer";
-import Anonymous from "@/ui/layouts/Anonymous";
+import { CandidateOffer } from '@/ui/components/candidates/CandidateOffer'
+import Anonymous from '@/ui/layouts/Anonymous'
 
 export const CandidateOfferPage = () => {
   return (
@@ -9,4 +9,4 @@ export const CandidateOfferPage = () => {
   )
 }
 
-export default CandidateOfferPage;
+export default CandidateOfferPage

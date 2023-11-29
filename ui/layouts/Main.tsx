@@ -1,14 +1,14 @@
-import { useRouter } from "next/router";
-import { useGetUserByEmailQuery } from "@/__generated__/graphql";
-import { useAuth } from "@/ui/contexts/AuthContext";
-import React, { useEffect } from "react";
-import { Box, CircularProgress, CssBaseline, IconButton, Toolbar } from "@mui/material";
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import Image from "next/image";
-import { SideNav } from "@/ui/components/main/SideNav";
-import { AppToolbar } from "@/ui/components/main/AppToolbar";
-import { AppBarStyled, Drawer } from "@/ui/components/main/styled";
+import { useRouter } from 'next/router'
+import { useGetUserByEmailQuery } from '@/__generated__/graphql'
+import { useAuth } from '@/ui/contexts/AuthContext'
+import React, { useEffect } from 'react'
+import { Box, CircularProgress, CssBaseline, IconButton, Toolbar } from '@mui/material'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+import Image from 'next/image'
+import { SideNav } from '@/ui/components/main/SideNav'
+import { AppToolbar } from '@/ui/components/main/AppToolbar'
+import { AppBarStyled, Drawer } from '@/ui/components/main/styled'
 
 
 interface DashboardType {
@@ -20,7 +20,7 @@ function Main({ children }: DashboardType) {
   const router = useRouter()
   const { data, loading,error } = useGetUserByEmailQuery({
     variables: {
-      email: auth.currentUser?.email || ""
+      email: auth.currentUser?.email || ''
     },
     skip: !auth.currentUser?.email || !token
   })
@@ -29,7 +29,7 @@ function Main({ children }: DashboardType) {
     if (data?.userByEmail) {
       setUserData(data.userByEmail)
     }
-  }, [data, setUserData]);
+  }, [data, setUserData])
 
   useEffect(() => {
     if((error || !data) && !loading && isInitialised) {
@@ -38,10 +38,10 @@ function Main({ children }: DashboardType) {
   }, [data, error, loading, isInitialised, router])
 
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(true)
   const toggleDrawer = () => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
 
   if(loading) return <CircularProgress />
 

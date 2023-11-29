@@ -1,15 +1,15 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { FirebaseAuthContextType } from "@/ui/types";
-import { auth } from "@/ui/auth";
-import { signInWithEmailAndPassword, signOut, User } from "@firebase/auth";
-import { User as UserRaw } from "@/__generated__/graphql";
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
+import { FirebaseAuthContextType } from '@/ui/types'
+import { auth } from '@/ui/auth'
+import { signInWithEmailAndPassword, signOut, User } from '@firebase/auth'
+import { User as UserRaw } from '@/__generated__/graphql'
 
 const AuthContext = createContext<FirebaseAuthContextType | null>(null)
 
 function AuthProvider({ children }: { children: ReactNode }) {
   const [token, setToken] = useState<string | null>(null)
   const [isInitialised, setIsInitialised] = useState<boolean>(false)
-  const [ userData, setUserData] = useState<null | Partial<UserRaw>>(null)
+  const [userData, setUserData] = useState<null | Partial<UserRaw>>(null)
   useEffect(
     () =>
       auth.onAuthStateChanged(async (user: User | null) => {
@@ -28,7 +28,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const logout = async () => {
-    return await signOut(auth).then(()=> {
+    return await signOut(auth).then(() => {
       setToken(null)
       setUserData(null)
     })
@@ -37,7 +37,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
     token,
     login,
     logout,
-    user : userData,
+    user: userData,
     setUserData,
     auth,
     isInitialised
@@ -52,4 +52,4 @@ const useAuth = () => {
   return context
 }
 
-export { AuthProvider , AuthContext , useAuth }
+export { AuthProvider, AuthContext, useAuth }

@@ -1,5 +1,5 @@
-import { useAuth } from "@/ui/contexts/AuthContext";
-import { Candidate, useGetCandidatesQuery } from "@/__generated__/graphql";
+import { useAuth } from '@/ui/contexts/AuthContext'
+import { Candidate, useGetCandidatesQuery } from '@/__generated__/graphql'
 import {
   Box,
   Button,
@@ -10,9 +10,9 @@ import {
   TableHead,
   TableRow,
   Typography
-} from "@mui/material";
-import Add from "@mui/icons-material/Add";
-import { useRouter } from "next/router";
+} from '@mui/material'
+import Add from '@mui/icons-material/Add'
+import { useRouter } from 'next/router'
 
 export const CandidatesTable = () => {
   const { user } = useAuth()
@@ -23,9 +23,9 @@ export const CandidatesTable = () => {
   })
   if (loading) return <CircularProgress />
 
-  const candidates = data?.candidates as Candidate[];
+  const candidates = data?.candidates as Candidate[]
 
-  if (!candidates) return null;
+  if (!candidates) return null
 
   return (
     <Box sx={{ maxWidth: '1440px', p:5 }}>

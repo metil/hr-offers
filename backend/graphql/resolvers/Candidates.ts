@@ -1,14 +1,14 @@
-import { GraphQL } from "@/backend/graphql/declarations";
-import { Candidate, CandidateInput } from "@/__generated__/graphql";
-import { candidateValidation } from "@/validations/candidates";
+import { GraphQL } from '@/backend/graphql/declarations'
+import { Candidate, CandidateInput } from '@/__generated__/graphql'
+import { candidateValidation } from '@/validations/candidates'
 
 export const candidates = {
   Query: {
     candidates: async (_: any, __ : any, { db }: GraphQL.Context) => {
-      return db.candidate.candidates();
+      return db.candidate.candidates()
     },
     candidate: async (_: any, { id } : any, { db }: GraphQL.Context) => {
-      return db.candidate.candidate(id);
+      return db.candidate.candidate(id)
     },
   },
   Mutation: {

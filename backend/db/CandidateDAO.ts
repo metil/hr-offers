@@ -1,25 +1,25 @@
-import { BatchedSQLDataSource, BatchedSQLDataSourceProps } from "@nic-jennings/sql-datasource";
-import { Candidate, CandidateInput } from "@/__generated__/graphql";
+import { BatchedSQLDataSource, BatchedSQLDataSourceProps } from '@nic-jennings/sql-datasource'
+import { Candidate, CandidateInput } from '@/__generated__/graphql'
 
 type CandidateAggregate = Candidate & { full_count: number }
 
 
 export class CandidateDAO extends BatchedSQLDataSource {
   constructor(config: BatchedSQLDataSourceProps) {
-    super(config);
+    super(config)
   }
   candidate(id: string) {
     return this.db.query
-      .select("*")
-      .from("public.Candidates")
-      .where("id", id)
-      .first();
+      .select('*')
+      .from('public.Candidates')
+      .where('id', id)
+      .first()
   }
   createCandidate(candidate: CandidateInput) {
-    return this.db.query.insert(candidate).into("public.Candidates").returning("*");
+    return this.db.query.insert(candidate).into('public.Candidates').returning('*')
   }
   candidates(limit: number = 10, offset: number = 0) {
-    return this.db.query.select("*").from("public.Candidates").limit(limit).offset(offset);
+    return this.db.query.select('*').from('public.Candidates').limit(limit).offset(offset)
   }
 
   /**
@@ -45,6 +45,6 @@ export class CandidateDAO extends BatchedSQLDataSource {
   candidatesAggregate(limit: number = 10, offset: number = 0) : Promise<CandidateAggregate[]> {
     return this.db.query(
       'SELECT *, count(*) OVER() AS full_count FROM public."Candidates"'
-    ).limit(limit).offset(offset);
+    ).limit(limit).offset(offset)
   }
 }

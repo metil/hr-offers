@@ -1,5 +1,5 @@
-import { Box, Card, CardContent, CardHeader, Container, Typography, useTheme } from "@mui/material";
-import { Offer } from "@/__generated__/graphql";
+import { Box, Card, CardContent, CardHeader, Container, Typography, useTheme } from '@mui/material'
+import { Offer } from '@/__generated__/graphql'
 type OfferViewProps = {
   offerData: Partial<Offer> | null
 }

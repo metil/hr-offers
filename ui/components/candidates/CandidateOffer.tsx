@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { useRouter } from "next/router";
-import { CircularProgress } from "@mui/material";
-import { Offer, useGetOfferWithPinLazyQuery } from "@/__generated__/graphql";
-import { OfferPIN } from "@/ui/components/offers/OfferPIN";
-import { OfferView } from "@/ui/components/offers/OfferView";
+import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { CircularProgress } from '@mui/material'
+import { Offer, useGetOfferWithPinLazyQuery } from '@/__generated__/graphql'
+import { OfferPIN } from '@/ui/components/offers/OfferPIN'
+import { OfferView } from '@/ui/components/offers/OfferView'
 
 export const CandidateOffer = () => {
-  const router = useRouter();
-  const { offerId } = router.query;
-  const [offerData, setOfferData] = useState<Partial<Offer> | null>(null);
+  const router = useRouter()
+  const { offerId } = router.query
+  const [offerData, setOfferData] = useState<Partial<Offer> | null>(null)
 
   const [getOffer, { loading }] = useGetOfferWithPinLazyQuery()
 

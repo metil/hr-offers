@@ -1,12 +1,12 @@
-import { useFormik } from "formik";
-import { CandidateInput, useCreateCandidateMutation } from "@/__generated__/graphql";
-import { candidateValidation as validationSchema } from "@/validations/candidates";
-import { Container } from "@mui/system";
-import { Box, Button, MenuItem, TextField, Typography } from "@mui/material";
-import Main from "@/ui/layouts/Main";
-import { FormikConfig } from "formik/dist/types";
-import { enqueueSnackbar } from "notistack";
-import { useRouter } from "next/router";
+import { useFormik } from 'formik'
+import { CandidateInput, useCreateCandidateMutation } from '@/__generated__/graphql'
+import { candidateValidation as validationSchema } from '@/validations/candidates'
+import { Container } from '@mui/system'
+import { Box, Button, MenuItem, TextField, Typography } from '@mui/material'
+import Main from '@/ui/layouts/Main'
+import { FormikConfig } from 'formik/dist/types'
+import { enqueueSnackbar } from 'notistack'
+import { useRouter } from 'next/router'
 
 const SPECIALIZATIONS = [
   'Frontend',
@@ -21,13 +21,13 @@ const SPECIALIZATIONS = [
   'Sales',
   'HR',
   'Other'
-];
+]
 
 
 const CandidateCreatePage = () => {
 
-  const [ createCandidate] = useCreateCandidateMutation()
-  const router = useRouter();
+  const [createCandidate] = useCreateCandidateMutation()
+  const router = useRouter()
   const submit: FormikConfig<CandidateInput>['onSubmit'] = async (values: CandidateInput, { setSubmitting }) => {
     setSubmitting(true)
     await createCandidate({
@@ -131,6 +131,6 @@ const CandidateCreatePage = () => {
       </Container>
     </Main>
   )
-};
+}
 
-export default CandidateCreatePage;
+export default CandidateCreatePage

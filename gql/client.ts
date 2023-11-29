@@ -1,8 +1,8 @@
-import { Auth, User } from "@firebase/auth";
-import { setContext } from "@apollo/client/link/context";
-import { ApolloClient, from, HttpLink, InMemoryCache } from "@apollo/client";
-import { onError } from "@apollo/client/link/error";
-import { enqueueSnackbar } from "notistack";
+import { Auth, User } from '@firebase/auth'
+import { setContext } from '@apollo/client/link/context'
+import { ApolloClient, from, HttpLink, InMemoryCache } from '@apollo/client'
+import { onError } from '@apollo/client/link/error'
+import { enqueueSnackbar } from 'notistack'
 
 export const buildApolloClient = (
   auth: Auth,

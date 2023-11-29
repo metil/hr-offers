@@ -1,9 +1,9 @@
-import { BatchedSQLDataSource, BatchedSQLDataSourceProps } from "@nic-jennings/sql-datasource";
-import { User, UserInput } from "@/__generated__/graphql";
+import { BatchedSQLDataSource, BatchedSQLDataSourceProps } from '@nic-jennings/sql-datasource'
+import { User, UserInput } from '@/__generated__/graphql'
 
 export class UserDAO extends BatchedSQLDataSource {
   constructor(config: BatchedSQLDataSourceProps) {
-    super(config);
+    super(config)
   }
 
   user(id: string): Promise<User[]> {

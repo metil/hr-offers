@@ -1,6 +1,6 @@
-import { AppBar, Drawer as MuiDrawer, styled } from "@mui/material";
+import { AppBar, Drawer as MuiDrawer, styled } from '@mui/material'
 
-const drawerWidth: number = 240;
+const drawerWidth: number = 240
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -38,7 +38,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
       }
     },
   }),
-);
+)
 
 const AppBarStyled = styled(AppBar)`
   background: ${(props) => props.theme.header?.background};

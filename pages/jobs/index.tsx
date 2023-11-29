@@ -1,5 +1,5 @@
-import Main from "@/ui/layouts/Main";
-import JobsTable from "@/ui/components/jobs/JobsTable";
+import Main from '@/ui/layouts/Main'
+import JobsTable from '@/ui/components/jobs/JobsTable'
 
 function JobsPage () {
   return (
@@ -8,4 +8,4 @@ function JobsPage () {
     </Main>
   )
 }
-export default JobsPage;
+export default JobsPage

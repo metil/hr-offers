@@ -1,4 +1,4 @@
-import * as yup from "yup";
+import * as yup from 'yup'
 
 export const candidateValidation = yup.object({
   name: yup.string().required('Name is required').max(30),

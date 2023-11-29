@@ -1,7 +1,7 @@
-import React from "react";
-import { Box, CssBaseline, Toolbar } from "@mui/material";
-import Image from "next/image";
-import { AppBarStyled, Drawer } from "@/ui/components/main/styled";
+import React from 'react'
+import { Box, CssBaseline, Toolbar } from '@mui/material'
+import Image from 'next/image'
+import { AppBarStyled, Drawer } from '@/ui/components/main/styled'
 
 
 interface DashboardType {

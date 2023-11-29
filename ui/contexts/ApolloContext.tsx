@@ -1,7 +1,7 @@
-import { ApolloProvider } from "@apollo/client";
-import { useAuth } from "@/ui/contexts/AuthContext";
-import { createContext, useMemo } from "react";
-import { buildApolloClient } from "@/gql/client";
+import { ApolloProvider } from '@apollo/client'
+import { useAuth } from '@/ui/contexts/AuthContext'
+import { createContext, useMemo } from 'react'
+import { buildApolloClient } from '@/gql/client'
 
 
 const ApolloContext = createContext(null)

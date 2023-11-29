@@ -1,4 +1,4 @@
-import { useAuth } from "@/ui/contexts/AuthContext";
+import { useAuth } from '@/ui/contexts/AuthContext'
 
 import {
   Box,
@@ -10,12 +10,12 @@ import {
   TableHead,
   TableRow,
   Typography
-} from "@mui/material";
-import { Offer, useGetUserOffersQuery } from "@/__generated__/graphql";
-import { timestampToDateString } from "@/ui/utils";
-import { enqueueSnackbar } from "notistack";
-import Add from "@mui/icons-material/Add";
-import { useRouter } from "next/router";
+} from '@mui/material'
+import { Offer, useGetUserOffersQuery } from '@/__generated__/graphql'
+import { timestampToDateString } from '@/ui/utils'
+import { enqueueSnackbar } from 'notistack'
+import Add from '@mui/icons-material/Add'
+import { useRouter } from 'next/router'
 
 export default function OffersTable() {
   const { user } = useAuth()
@@ -29,11 +29,11 @@ export default function OffersTable() {
   })
   if (loading) return <CircularProgress/>
 
-  const offers = data?.user?.offers as Offer[];
+  const offers = data?.user?.offers as Offer[]
 
-  if(error) enqueueSnackbar(error.message, { variant: 'error' });
+  if(error) enqueueSnackbar(error.message, { variant: 'error' })
 
-  if (!offers) return null;
+  if (!offers) return null
   return (
     <Box sx={{ maxWidth: '1440px', p: 5 }}>
       <Box display='flex' alignItems='end' justifyContent='flex-end' width={'100%'}>

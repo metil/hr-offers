@@ -1,6 +1,6 @@
 import * as admin from 'firebase-admin'
 import { NextApiRequest } from 'next'
-import { CircuitBreak } from "@/backend/middlewares/CircuitBreak";
+import { CircuitBreak } from '@/backend/middlewares/CircuitBreak'
 
 export class FirebaseAuthentication extends CircuitBreak{
   async isAuthorized(req: NextApiRequest): Promise<boolean> {

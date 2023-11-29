@@ -1,5 +1,5 @@
-import Main from "@/ui/layouts/Main";
-import OffersTable from "@/ui/components/offers/OffersTable";
+import Main from '@/ui/layouts/Main'
+import OffersTable from '@/ui/components/offers/OffersTable'
 
 function Offers () {
   return (
@@ -9,4 +9,4 @@ function Offers () {
   )
 }
 
-export default Offers;
+export default Offers

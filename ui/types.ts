@@ -1,5 +1,5 @@
-import { User } from "@/__generated__/graphql";
-import { Auth, UserCredential } from "@firebase/auth";
+import { User } from '@/__generated__/graphql'
+import { Auth, UserCredential } from '@firebase/auth'
 
 export type FirebaseAuthContextType = {
     token: string | null;

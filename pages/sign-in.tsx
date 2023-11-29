@@ -1,12 +1,12 @@
-import { Container } from "@mui/system";
-import { Avatar, Box, Button, TextField, Typography } from "@mui/material";
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { useFormik } from "formik";
-import { useAuth } from "@/ui/contexts/AuthContext";
-import { useRouter } from "next/router";
-import { FormikConfig } from "formik/dist/types";
-import { enqueueSnackbar } from "notistack";
-import * as yup from 'yup';
+import { Container } from '@mui/system'
+import { Avatar, Box, Button, TextField, Typography } from '@mui/material'
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
+import { useFormik } from 'formik'
+import { useAuth } from '@/ui/contexts/AuthContext'
+import { useRouter } from 'next/router'
+import { FormikConfig } from 'formik/dist/types'
+import { enqueueSnackbar } from 'notistack'
+import * as yup from 'yup'
 
 
 type FormValues = {
@@ -23,7 +23,7 @@ const validationSchema = yup.object({
     .string()
     .min(6, 'Password should be of minimum 6 characters length')
     .required('Password is required'),
-});
+})
 
 export default function SignIn() {
   const { login } = useAuth()

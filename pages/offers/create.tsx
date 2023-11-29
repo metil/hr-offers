@@ -1,5 +1,5 @@
-import Main from "@/ui/layouts/Main";
-import { OffersForm } from "@/ui/components/offers/OffersForm";
+import Main from '@/ui/layouts/Main'
+import { OffersForm } from '@/ui/components/offers/OffersForm'
 
 const CreateOfferPage = () => {
 
@@ -7,7 +7,7 @@ const CreateOfferPage = () => {
     <Main>
       <OffersForm/>
     </Main>
-  );
+  )
 }
 
-export default CreateOfferPage;
+export default CreateOfferPage

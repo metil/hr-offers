@@ -1,4 +1,4 @@
-import { useAuth } from "@/ui/contexts/AuthContext";
+import { useAuth } from '@/ui/contexts/AuthContext'
 
 import {
   Box,
@@ -10,11 +10,11 @@ import {
   TableHead,
   TableRow,
   Typography
-} from "@mui/material";
-import { Job, useGetJobsQuery } from "@/__generated__/graphql";
-import { timestampToDateString } from "@/ui/utils";
-import Add from "@mui/icons-material/Add";
-import { useRouter } from "next/router";
+} from '@mui/material'
+import { Job, useGetJobsQuery } from '@/__generated__/graphql'
+import { timestampToDateString } from '@/ui/utils'
+import Add from '@mui/icons-material/Add'
+import { useRouter } from 'next/router'
 
 export default function JobsTable() {
   const router = useRouter()
@@ -25,9 +25,9 @@ export default function JobsTable() {
   })
   if (loading) return <CircularProgress/>
 
-  const jobs = data?.jobs as Job[];
+  const jobs = data?.jobs as Job[]
 
-  if (!jobs) return null;
+  if (!jobs) return null
   return (
     <Box sx={{ maxWidth: '1440px', p: 5 }}>
       <Box display='flex' alignItems='end' justifyContent='flex-end' width={'100%'}>
