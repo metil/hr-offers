@@ -70,7 +70,7 @@ const CandidateCreatePage = () => {
           }}
         >
           <Typography component="h1" variant="h5">
-            Create Open Position
+            Create Candidate
           </Typography>
           <Box component="form" onSubmit={formik.handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
